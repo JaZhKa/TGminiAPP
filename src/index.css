@@ -1,5 +1,6 @@
 @import url('./pages/home');
 @import url('./components/sign');
+@import url('./pages/horoscope');
 
 body {
 	margin: 0;

@@ -1,0 +1,13 @@
+.horoscope__date {
+  color: var(--secondary);
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 3rem;
+}
+
+.horoscope__text {
+  color: var(--secondary);
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 2rem;
+}
