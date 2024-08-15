@@ -1,0 +1,53 @@
+.home__sign-wrap {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+  padding: 0 2rem;
+  gap: 2rem;
+}
+
+.home__sign-anchor {
+  text-decoration: none;
+}
+
+.home__sign {
+  border: solid 2px var(--secondary);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px 2px var(--secondary) inset;
+  transition: all 0.2s ease-in-out;
+}
+
+.home__sign:hover {
+  transform: scale(0.95);
+  box-shadow: 0px 0px 15px 4px var(--secondary) inset;
+}
+
+.home__sign > img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.home__sign > p {
+  font-size: 2rem;
+  color: var(--secondary);
+}
+
+@media screen and (max-width: 768px) {
+  .home__sign > img {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home__sign-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+  }
+
+  .home__sign > img {
+    width: 10rem;
+    height: 10rem;
+  }
+}

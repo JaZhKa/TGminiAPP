@@ -6,8 +6,8 @@
 }
 
 :root {
-  --primary: #3E3794;
-  --secondary: #C6C6C6;
+  --primary: #615aaf;
+  --secondary: #d4d4d4;
   --accent: #9ADFFF;
 }
 
@@ -19,6 +19,11 @@ body {
 	text-align: center;
   background-color: var(--primary);
   width: clamp(36rem, 100%, 96rem);
-  height: 100dvh;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 50%;
+  }
 }
