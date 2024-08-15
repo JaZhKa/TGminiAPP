@@ -5,21 +5,23 @@ export const useGetHoroscopes = () => {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
-	const getHoroscope = async (sign, language = 'orginal') => {
-		fetch('https://poker247tech.ru/get_horoscope/', {
+	const getHoroscope = async (sign, lang = 'original') => {
+		await fetch('https://poker247tech.ru/get_horoscope/', {
 			method: 'POST',
-			body: JSON.stringify({ sign, language }),
+			body: JSON.stringify({ sign: sign, language: lang }),
 			headers: {
 				'Content-Type': 'application/json',
 			},
-		}).catch((error) => {
+		})
+			.catch((error) => {
 				setError(error);
 				throw new Error(error);
-			}).then((response) => {
-				response.json();
-			}).then((response) => {
-				setHoroscope(response);
-			}).finally(() => {
+			})
+			.then((response) => response.json())
+			.then((json) => {
+				setHoroscope(json);
+			})
+			.finally(() => {
 				setLoading(false);
 			});
 	};
@@ -28,6 +30,6 @@ export const useGetHoroscopes = () => {
 		horoscope,
 		loading,
 		error,
-		getHoroscope
+		getHoroscope,
 	};
 };

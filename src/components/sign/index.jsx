@@ -1,16 +1,15 @@
-function Sign({ sign, name, birth }) {
+function Sign({ sign, img, name, birth, setSign }) {
 	return (
-		// eslint-disable-next-line jsx-a11y/anchor-is-valid
-		<a href="#" className="home__sign-anchor">
+		<button onClick={() => setSign(sign)} className="home__sign-btn">
 			<div className="home__sign">
 				<img
-					src={sign}
+					src={img}
 					alt={`${name} sign`}
 				/>
 				<p>{name}</p>
 				<p>{birth}</p>
 			</div>
-		</a>
+		</button>
 	);
 }
 
