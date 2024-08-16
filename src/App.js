@@ -1,12 +1,16 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/home';
 import Horoscope from './pages/horoscope';
 
+const telegram = window.Telegram.WebApp;
+
 function App() {
   const [sign, setSign] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => { telegram.ready() });
 
   const handleSignChange = (newSign) => {
     setSign(newSign);
