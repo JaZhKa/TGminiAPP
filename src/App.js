@@ -18,17 +18,14 @@ function App() {
   }, []);
 
   useEffect(() => {
-    tg.MainButton.setParams({text: lang === 'ru' ? 'Toggle еnglish' : 'Переключить на русский'});
+    tg.MainButton.setParams({ text: lang === 'ru' ? 'Toggle еnglish' : 'Переключить на русский' });
     tg.MainButton.show();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang])
 
   useEffect(() => {
     tg.onEvent('mainButtonClicked', toggleLang)
-    return () => {
-      tg.offEvent('mainButtonClicked', toggleLang);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSignChange = (newSign) => {
