@@ -8,7 +8,7 @@ const tg = window.Telegram.WebApp;
 
 function App() {
   const [sign, setSign] = useState('');
-  const [lang, setLang] = useState('ru');
+  const [lang, setLang] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function App() {
     setSign(newSign);
     navigate('/horoscope');
   }
-
+console.log(lang);
   return (
     <div className="App">
       <Routes>

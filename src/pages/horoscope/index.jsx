@@ -13,7 +13,8 @@ const Horoscope = ({ sign, lang }) => {
 
 	useEffect(() => {
 		getData(sign, lang);
-	}, [getData, lang, sign]);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<div className="horoscope__main">
