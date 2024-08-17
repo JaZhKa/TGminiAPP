@@ -11,13 +11,22 @@ const Horoscope = ({ sign, lang }) => {
 
 	useEffect(() => {
 		getData(sign, lang);
-	}, []);
+	}, [getData, lang, sign]);
 
 	return (
-			<div className="horoscope__main">
-				<p className='horoscope__date'>{currentDate.toLocaleDateString(lang, {day: 'numeric', month: 'long'})}</p>
-				{loading ? <p className='horoscope__text'>Loading...</p> : <p className='horoscope__text'>{horoscope?.horoscope}</p>}
-			</div>
+		<div className="horoscope__main">
+			<p className="horoscope__date">
+				{currentDate.toLocaleDateString(lang, {
+					day: 'numeric',
+					month: 'long',
+				})}
+			</p>
+			{loading ? (
+				<p className="horoscope__text">Loading...</p>
+			) : (
+				<p className="horoscope__text">{horoscope?.horoscope}</p>
+			)}
+		</div>
 	);
 };
 

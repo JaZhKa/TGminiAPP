@@ -4,13 +4,13 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/home';
 import Horoscope from './pages/horoscope';
 
-const telegram = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp;
 
 function App() {
   const [sign, setSign] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => { telegram.ready() });
+  useEffect(() => { tg.ready() }, []);
 
   const handleSignChange = (newSign) => {
     setSign(newSign);
