@@ -5,9 +5,9 @@ const webLink = process.env.WEB_LINK;
 const bot = new Telegraf(token);
 
 bot.start((ctx) =>
-  ctx.reply(`Welcome ${ctx.from.language_code}`, {
+  ctx.reply(ctx.from.language_code === 'ru' ? 'Привет!' : 'Hello!', {
     reply_markup: {
-      inline_keyboard: [[{ text: "Get horoscope", web_app: { url: webLink } }]],
+      inline_keyboard: [[{ text: ctx.from.language_code === 'ru' ? 'Получить гороскоп' : 'Get horoscope', web_app: { url: webLink } }]],
     },
   })
 );

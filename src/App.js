@@ -23,10 +23,9 @@ function App() {
 
   return (
     <div className="App">
-      <h2>{lang}</h2>
       <Routes>
         <Route path='/' element={<Home lang={lang} setSign={handleSignChange} />} />
-        <Route path='/horoscope' element={<Horoscope sign={sign} />} />
+        <Route path='/horoscope' element={<Horoscope sign={sign} lang={lang} />} />
       </Routes>
     </div>
   );
