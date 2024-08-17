@@ -8,22 +8,23 @@ const tg = window.Telegram.WebApp;
 
 function App() {
   const [sign, setSign] = useState('');
+  const [lang, setLang] = useState('ru');
   const navigate = useNavigate();
 
-  useEffect(() => { tg.ready() }, []);
+  useEffect(() => {
+    tg.ready();
+    setLang(tg.initDataUnsafe?.user?.language_code);
+  }, []);
 
   const handleSignChange = (newSign) => {
     setSign(newSign);
     navigate('/horoscope');
   }
 
-  console.log(tg);
-
   return (
     <div className="App">
-      <span className={'username'}>{tg.initDataUnsafe?.user?.username}</span>
       <Routes>
-        <Route path='/' element={<Home lang={'ru'} setSign={handleSignChange} />} />
+        <Route path='/' element={<Home lang={lang} setSign={handleSignChange} />} />
         <Route path='/horoscope' element={<Horoscope sign={sign} />} />
       </Routes>
     </div>

@@ -7,7 +7,7 @@ const bot = new Telegraf(token);
 bot.start((ctx) =>
   ctx.reply(`Welcome ${ctx.from.language_code}`, {
     reply_markup: {
-      keyboard: [[{ text: "Get horoscope", web_app: { url: webLink } }]],
+      inline_keyboard: [[{ text: "Get horoscope", web_app: { url: webLink } }]],
     },
   })
 );
