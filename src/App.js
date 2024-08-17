@@ -15,9 +15,10 @@ function App() {
     tg.ready();
     setLang(user.language_code);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lang]);
+  }, []);
 
   useEffect(() => {
+    tg.MainButton.setParams({ text: lang === 'ru' ? 'Toggle еnglish' : 'Переключить на русский' });
     tg.MainButton.show();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang])
@@ -25,7 +26,7 @@ function App() {
   useEffect(() => {
     tg.onEvent('mainButtonClicked', toggleLang)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lang]);
+  }, []);
 
   const handleSignChange = (newSign) => {
     setSign(newSign);
@@ -33,14 +34,11 @@ function App() {
   }
 
   const toggleLang = () => {
-    if(lang === 'ru') {
+    if (lang === 'ru') {
       setLang('en');
-      tg.MainButton.setText('Toggle english');
     } else {
       setLang('ru');
-      tg.MainButton.setText('Переключить на русский');
     }
-
   }
 
   return (
