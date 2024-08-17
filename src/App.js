@@ -25,6 +25,9 @@ function App() {
 
   useEffect(() => {
     tg.onEvent('mainButtonClicked', toggleLang)
+    return () => {
+      tg.offEvent('mainButtonClicked', toggleLang);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
