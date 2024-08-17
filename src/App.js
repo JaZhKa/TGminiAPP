@@ -20,10 +20,10 @@ function App() {
     setSign(newSign);
     navigate('/horoscope');
   }
-console.log(lang);
+
   return (
     <div className="App">
-      <h2>{tg.initDataUnsafe?.user?.language_code}</h2>
+      <h2>{lang}</h2>
       <Routes>
         <Route path='/' element={<Home lang={lang} setSign={handleSignChange} />} />
         <Route path='/horoscope' element={<Horoscope sign={sign} />} />
