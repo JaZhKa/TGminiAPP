@@ -12,10 +12,13 @@ import libra from './../../img/libra.png';
 import scorpio from './../../img/scorpio.png';
 import sagittarius from './../../img/sagittarius.png';
 
+const tg = window.Telegram.WebApp;
+
 const Home = ({ lang, setSign }) => {
 	return (
 		<div className="home__main">
 			<h1>{lang === 'ru' ? 'Выберите знак зодиака' : 'Choose your sign'}</h1>
+			<span className={'username'}>{tg.initDataUnsafe?.user?.username}</span>
 			<div className="home__sign-wrap">
 				<Sign
 					sign={'capricorn'}

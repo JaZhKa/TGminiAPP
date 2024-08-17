@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <span className={'username'}>{tg.initDataUnsafe?.user?.username}</span>
       <Routes>
         <Route path='/' element={<Home lang={'ru'} setSign={handleSignChange} />} />
         <Route path='/horoscope' element={<Horoscope sign={sign} />} />
