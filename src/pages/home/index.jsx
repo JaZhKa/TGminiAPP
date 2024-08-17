@@ -15,7 +15,6 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTelegram } from './../../hooks/useTelegram';
 
-
 const Home = ({ lang, setSign }) => {
 	const { tg } = useTelegram();
 	const navigate = useNavigate();
@@ -23,20 +22,20 @@ const Home = ({ lang, setSign }) => {
 	const onBack = () => {
 		tg.BackButton.hide();
 		navigate('/');
-	}
+	};
 
 	useEffect(() => {
 		tg.BackButton.show();
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	useEffect(() => {
-		tg.BackButton.onEvent('backButtonClicked', onBack)
+		tg.onEvent('backButtonClicked', onBack);
 		return () => {
-			tg.offEvent('backButtonClicked', onBack)
-	}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
+			tg.offEvent('backButtonClicked', onBack);
+		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<div className="home__main">
