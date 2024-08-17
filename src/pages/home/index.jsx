@@ -12,7 +12,7 @@ import libra from './../../img/libra.png';
 import scorpio from './../../img/scorpio.png';
 import sagittarius from './../../img/sagittarius.png';
 import { useEffect } from 'react';
-import { useTelegram } from './hooks/useTelegram';
+import { useTelegram } from './../../hooks/useTelegram';
 
 const Home = ({ lang, setSign }) => {
 	const { tg, onClose } = useTelegram();
