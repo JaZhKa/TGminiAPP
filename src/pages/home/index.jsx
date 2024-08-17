@@ -15,19 +15,19 @@ import { useEffect } from 'react';
 import { useTelegram } from './../../hooks/useTelegram';
 
 const Home = ({ lang, setSign }) => {
-	const { tg, onClose } = useTelegram();
+	const { tg } = useTelegram();
 
 	useEffect(() => {
-		tg.MainButton.show();
-		tg.MainButton.setParams({ text: lang === 'ru' ? 'Закрыть' : 'Close' });
+		tg.BackButton.show();
+		tg.BackButton.setParams({ text: lang === 'ru' ? 'Закрыть' : 'Close' });
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	useEffect(() => {
-		tg.onEvent('mainButtonClicked', onClose);
-		return () => tg.offEvent('mainButtonClicked', onClose);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	// useEffect(() => {
+	// 	tg.onEvent('mainButtonClicked', onClose);
+	// 	return () => tg.offEvent('mainButtonClicked', onClose);
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, []);
 
 	return (
 		<div className="home__main">
