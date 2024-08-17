@@ -4,7 +4,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/home';
 import Horoscope from './pages/horoscope';
 
-const tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp.expand();
 
 function App() {
   const [sign, setSign] = useState('');
