@@ -18,6 +18,7 @@ const Home = ({ lang, setSign }) => {
 	const { tg, onClose } = useTelegram();
 
 	useEffect(() => {
+		tg.MainButton.show();
 		tg.MainButton.setParams({ text: lang === 'ru' ? 'Закрыть' : 'Close' });
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
