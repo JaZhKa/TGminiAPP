@@ -4,7 +4,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/home';
 import Horoscope from './pages/horoscope';
 
-const tg = window.Telegram.WebApp.expand();
+const tg = window.Telegram.WebApp;
 
 function App() {
   const [sign, setSign] = useState('');
@@ -16,6 +16,8 @@ function App() {
     setSign(newSign);
     navigate('/horoscope');
   }
+
+  console.log(tg);
 
   return (
     <div className="App">
