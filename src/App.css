@@ -6,13 +6,15 @@
 }
 
 :root {
-  --primary: #615aaf;
+  /* --primary: #615aaf; */
   --secondary: #d4d4d4;
   --accent: #9ADFFF;
 }
 
 body {
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
 }
 
 .App {

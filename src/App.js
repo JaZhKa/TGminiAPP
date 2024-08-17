@@ -1,19 +1,20 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useTelegram } from './hooks/useTelegram';
 import Home from './pages/home';
 import Horoscope from './pages/horoscope';
 
-const tg = window.Telegram.WebApp;
-
 function App() {
+  const { tg, user } = useTelegram();
   const [sign, setSign] = useState('');
   const [lang, setLang] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     tg.ready();
-    setLang(tg.initDataUnsafe?.user?.language_code);
+    setLang(user.language_code);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSignChange = (newSign) => {
