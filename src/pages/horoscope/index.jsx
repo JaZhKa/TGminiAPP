@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useGetHoroscopes } from './../../hooks/useGetHoroscope';
 import { useNavigate } from 'react-router-dom';
-import { tg } from './../../hooks/useTelegram';
+import { useTelegram } from './../../hooks/useTelegram';
 
 const Horoscope = ({ sign, lang }) => {
 	const { horoscope, loading, getHoroscope } = useGetHoroscopes();
 	// eslint-disable-next-line no-unused-vars
 	const [currentDate, setCurrentDate] = useState(new Date());
 	const navigate = useNavigate();
+	const { tg } = useTelegram();
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	async function getData(sign, lang) {

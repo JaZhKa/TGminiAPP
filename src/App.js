@@ -17,23 +17,6 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onBack = () => {
-    navigate('/');
-  };
-
-  useEffect(() => {
-    tg.BackButton.show();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    tg.onEvent('backButtonClicked', onBack);
-    return () => {
-      tg.offEvent('backButtonClicked', onBack);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const handleSignChange = (newSign) => {
     setSign(newSign);
     navigate('/horoscope');
