@@ -45,6 +45,5 @@
   .home__sign > img {
     width: 10rem;
     height: 10rem;
-    color: var(--tg-theme-button-text-color);
   }
 }

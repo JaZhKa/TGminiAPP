@@ -19,7 +19,7 @@ const Home = ({ lang, setSign }) => {
 
 	useEffect(() => {
 		tg.BackButton.show();
-		tg.BackButton.setParams({ text: lang === 'ru' ? 'Закрыть' : 'Close' });
+		tg.SettingsButton.show();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
