@@ -6,7 +6,6 @@ export const useGetHoroscopes = () => {
 	const [error, setError] = useState(null);
 
 	const getHoroscope = async (sign, lang) => {
-		console.log(sign, lang);
 		await fetch('https://poker247tech.ru/get_horoscope/', {
 			method: 'POST',
 			body: JSON.stringify({ sign: sign, language: lang, period: 'today' }),
