@@ -36,7 +36,7 @@ function App() {
   const toggleLang = () => {
     if (lang === 'ru') {
       setLang('en');
-    } else if (lang === 'en') {
+    } else {
       setLang('ru');
     }
   }
