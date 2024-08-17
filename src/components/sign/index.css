@@ -27,6 +27,7 @@
 
 .home__sign > p {
   font-size: 2rem;
+  color: var(--tg-theme-text-color);
 }
 
 @media screen and (max-width: 768px) {
