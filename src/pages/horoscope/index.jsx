@@ -18,7 +18,6 @@ const Horoscope = ({ sign, lang }) => {
 
 	return (
 		<div className="horoscope__main">
-			<h3>{lang}</h3>
 			<p className="horoscope__date">
 				{currentDate.toLocaleDateString(lang, {
 					day: 'numeric',

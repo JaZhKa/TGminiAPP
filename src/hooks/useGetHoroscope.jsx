@@ -8,7 +8,7 @@ export const useGetHoroscopes = () => {
 	const getHoroscope = async (sign, lang) => {
 		await fetch('https://poker247tech.ru/get_horoscope/', {
 			method: 'POST',
-			body: JSON.stringify({ sign: sign, language: lang, period: 'today' }),
+			body: JSON.stringify({ sign: sign, language: lang === 'ru' ? 'original' : 'translated', period: 'today' }),
 			headers: {
 				'Content-Type': 'application/json',
 			},
