@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      <button type="button" onCkick={toggleLang}></button>
+      <button type="button" onCkick={() => toggleLang}></button>
       <Routes>
         <Route path='/' element={<Home lang={lang} setSign={handleSignChange} />} />
         <Route path='/horoscope' element={<Horoscope sign={sign} lang={lang} />} />
