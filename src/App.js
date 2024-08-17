@@ -14,7 +14,24 @@ function App() {
   useEffect(() => {
     tg.ready();
     setLang(user.language_code);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const onBack = () => {
+    navigate('/');
+  };
+
+  useEffect(() => {
+    tg.BackButton.show();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    tg.onEvent('backButtonClicked', onBack);
+    return () => {
+      tg.offEvent('backButtonClicked', onBack);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSignChange = (newSign) => {
@@ -24,6 +41,7 @@ function App() {
 
   return (
     <div className="App">
+      <button type="button" onClick={onBack}>back</button>
       <Routes>
         <Route path='/' element={<Home lang={lang} setSign={handleSignChange} />} />
         <Route path='/horoscope' element={<Horoscope sign={sign} lang={lang} />} />

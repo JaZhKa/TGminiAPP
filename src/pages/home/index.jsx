@@ -11,34 +11,10 @@ import virgo from './../../img/virgo.png';
 import libra from './../../img/libra.png';
 import scorpio from './../../img/scorpio.png';
 import sagittarius from './../../img/sagittarius.png';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useTelegram } from './../../hooks/useTelegram';
 
 const Home = ({ lang, setSign }) => {
-	const { tg } = useTelegram();
-	const navigate = useNavigate();
-
-	const onBack = () => {
-		navigate('/');
-	};
-
-	useEffect(() => {
-		tg.BackButton.show();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
-	useEffect(() => {
-		tg.onEvent('backButtonClicked', onBack);
-		return () => {
-			tg.offEvent('backButtonClicked', onBack);
-		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
 	return (
 		<div className="home__main">
-			<button className="home__back-btn" onClick={onBack}>back</button>
 			<h1>{lang === 'ru' ? 'Выберите знак зодиака' : 'Choose your sign'}</h1>
 			<div className="home__sign-wrap">
 				<Sign
