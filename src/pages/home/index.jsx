@@ -20,7 +20,6 @@ const Home = ({ lang, setSign }) => {
 	const navigate = useNavigate();
 
 	const onBack = () => {
-		tg.BackButton.hide();
 		navigate('/');
 	};
 
@@ -39,6 +38,7 @@ const Home = ({ lang, setSign }) => {
 
 	return (
 		<div className="home__main">
+			<button className="home__back-btn" onClick={onBack}>back</button>
 			<h1>{lang === 'ru' ? 'Выберите знак зодиака' : 'Choose your sign'}</h1>
 			<div className="home__sign-wrap">
 				<Sign
