@@ -4,6 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+## bot
+
+Link to the bot (https://t.me/Horoscopejazhka_bot)
+
+### cd bot
+### node bot.js
+
 In the project directory, you can run:
 
 ### `npm start`
