@@ -25,11 +25,8 @@ function App() {
 
   useEffect(() => {
     tg.onEvent('mainButtonClicked', toggleLang)
-    return () => {
-      tg.offEvent('mainButtonClicked', toggleLang);
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [lang]);
 
   const handleSignChange = (newSign) => {
     setSign(newSign);
@@ -47,7 +44,6 @@ function App() {
 
   return (
     <div className="App">
-      <button type="button" onCkick={() => toggleLang}></button>
       <Routes>
         <Route path='/' element={<Home lang={lang} setSign={handleSignChange} />} />
         <Route path='/horoscope' element={<Horoscope sign={sign} lang={lang} />} />
