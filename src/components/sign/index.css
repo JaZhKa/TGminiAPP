@@ -7,16 +7,16 @@
 
 .home__sign-btn {
   background-color: transparent;
-  border: solid 2px var(--tg-theme-button-color);
+  border: solid 2px var(--tg-theme-accent-text-color);
   border-radius: 1rem;
   padding: 1rem;
-  box-shadow: 0px 0px 10px 2px var(--tg-theme-button-color) inset;
+  box-shadow: 0px 0px 10px 2px var(--tg-theme-accent-text-color) inset;
   transition: all 0.2s ease-in-out;
 }
 
 .home__sign-btn:hover, .home__sing-btn:active, .home__sign-btn:focus, .home__sign-btn:active {
   transform: scale(0.95);
-  box-shadow: 0px 0px 15px 4px var(--tg-theme-button-color) inset;
+  box-shadow: 0px 0px 15px 4px var(--tg-theme-accent-text-color) inset;
 }
 
 .home__sign > img {
